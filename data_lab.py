@@ -1,16 +1,40 @@
+import json
 import pandas as pd
-data = {
-    "Agent":["cipher","ghost","viper","echo","titan"],
-    "role":["infiltrator","exploit dev","infiltrator","cryptanalyst","exploit dev"],
-    "bounty_k":[120,85,210,95,300],
-    "clearence_level":[4,5,3,5,4]
+league_roster=[ 
+    {
+    "name":"red",
+    "region":"johto",
+    "ace":{
+        "pokemon":"charizard",
+        "type":["fire"],
+        "attack":{
+            "name":"fire_blast",
+            "stat":85
+        },
+        "bond":95
+        },
+},
+{
+    "name":"misty",
+    "region":"kanto",
+    "ace":{
+        "pokemon":"starmie",
+        "type":["water","psychic"],
+        "attack":{
+        "name":"watergun",
+        "stat":70,
+        },
+        "bond":65
+    },
 }
-df=pd.DataFrame(data)
-exploit_devs=df[(df["role"]== "exploit dev")&(df["bounty_k"]>100)]
-print("==MASTER EXPLOIT DEVS==")
-print(exploit_devs)
-operatives=df[(df["clearence_level"]==5)|(df["bounty_k"]>=200)]
-print("==THE MAIN OPERATIVES==")
-print(operatives)
-average_salary=df[df["clearence_level"]==5]["bounty_k"].mean()
-print("THE AVERAGE SALARY OF THE EMPLOYES IS:",average_salary)
+]
+for trainers in league_roster:
+ if trainers["name"]=="misty":
+  pronoun="she"
+ else:
+  pronoun="he"
+ print(f"=====WE Have HERE TRAINER {trainers['name'].upper()} AND THE BEST POKEMON {pronoun.upper()} HAS IS {trainers['ace']['pokemon'].upper()}")
+with open("league_roster.json","r")as file:
+  vault_data=json.load(file)
+print(f"\n[VAULT CHECK] MISTY'S NEW BOND SCORE WITH HER POKEMON IS : {vault_data[1]['ace']['bond']}%")
+    

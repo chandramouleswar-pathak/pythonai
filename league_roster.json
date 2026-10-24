@@ -1,0 +1,33 @@
+[
+    {
+        "name": "red",
+        "region": "johto",
+        "ace": {
+            "pokemon": "charizard",
+            "type": [
+                "fire"
+            ],
+            "attack": {
+                "name": "fire_blast",
+                "stat": 85
+            },
+            "bond": 95
+        }
+    },
+    {
+        "name": "misty",
+        "region": "kanto",
+        "ace": {
+            "pokemon": "starmie",
+            "type": [
+                "water",
+                "psychic"
+            ],
+            "attack": {
+                "name": "watergun",
+                "stat": 70
+            },
+            "bond": 99
+        }
+    }
+]
