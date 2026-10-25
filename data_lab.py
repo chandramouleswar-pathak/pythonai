@@ -37,4 +37,16 @@ for trainers in league_roster:
 with open("league_roster.json","r")as file:
   vault_data=json.load(file)
 print(f"\n[VAULT CHECK] MISTY'S NEW BOND SCORE WITH HER POKEMON IS : {vault_data[1]['ace']['bond']}%")
-    
+df = pd.json_normalize(vault_data)
+print ("\n----LEAGUE DATA DASHBOARD----")
+print (df)
+print (f"\n average League Bond:{df['ace.bond'].mean}%")
+high_powers=df[df["ace.attack.stat"]>=80]
+print("\n -----HIGH ATTACK ROASTER----")
+print(high_powers[["name","ace.pokemon","ace.attack.stat"]])
+elight_bond=df[df["ace.bond"]>95]
+print("\n---trainers with highest bond with pokemon----")
+print(elight_bond[["name","ace.bond"]])
+highest_attack_power=df["ace.attack.stat"].max()
+print(f"\n-----HIGHEST POWER IN LEAGUE :")
+print(highest_attack_power)
