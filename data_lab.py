@@ -50,3 +50,5 @@ print(elight_bond[["name","ace.bond"]])
 highest_attack_power=df["ace.attack.stat"].max()
 print(f"\n-----HIGHEST POWER IN LEAGUE :")
 print(highest_attack_power)
+df["combat_power"]=df["ace.attack.stat"]+df["ace.bond"]
+print(df.sort_values(by="combat_power",ascending=False)[["name","ace.pokemon","combat_power"]])
