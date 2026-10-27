@@ -12,7 +12,7 @@ offers = [
     {"company": "atlassian", "LPA":45,"tax_rate":0.20},
     {"company": "startup", "LPA":25,"tax_rate":0.15},
 ]
-print("\n---PROCESSING OFFER PIPELINE ---")
+print("\n---offer window below watch carefully for on going current offers")
 for offer in offers:
     company=offer["company"]
     Lpa=offer["LPA"]
