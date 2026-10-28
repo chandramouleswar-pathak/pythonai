@@ -44,8 +44,8 @@ print (f"\n average League Bond:{df['ace.bond'].mean}%")
 high_powers=df[df["ace.attack.stat"]>=80]
 print("\n -----HIGH ATTACK ROASTER----")
 print(high_powers[["name","ace.pokemon","ace.attack.stat"]])
-elight_bond=df[df["ace.bond"]>95]
-print("\n---trainers with highest bond with pokemon----")
+elight_bond=df[df["ace.bond"]>50]
+print("\n---trainers that have the highest efficiency")
 print(elight_bond[["name","ace.bond"]])
 highest_attack_power=df["ace.attack.stat"].max()
 print(f"\n-----HIGHEST POWER IN LEAGUE :")
